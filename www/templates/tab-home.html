@@ -1,0 +1,30 @@
+<ion-view view-title="Greasy App">
+  <ion-content class="padding">
+	<div class="card">
+		<div class="item item-divider">
+		    Progress
+		</div>
+		<div class="item item-text-wrap">
+			You have attended {{stats.total}} gigs. {{stats.required}} are required.
+			<progress max="1" value="{{stats.total/stats.required}}"></progress>
+		</div>
+	</div>
+	<div class="list card">
+		<div class="item item-divider">
+		    Announcements
+		</div>
+		<a href="#" class="item" ng-repeat="announcement in announcements">
+			{{announcement.text | limitTo:140}}{{announcement.text.length > 140 ? '...' : ''}}
+		</a>
+	</div>
+	<div class="list card">
+		<div class="item item-divider">
+		    Upcoming Events
+		</div>
+		<a href="#/tab/events/{{event.id}}" class="item item-icon-right" ng-repeat="event in events">
+			{{event.title}}
+			<i class="icon ion-ios-arrow-right"></i>
+		</a>
+	</div>
+  </ion-content>
+</ion-view>

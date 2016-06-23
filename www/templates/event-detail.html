@@ -1,0 +1,38 @@
+<!--
+  This template loads for the 'tab.friend-detail' state (app.js)
+  'friend' is a $scope variable created in the FriendsCtrl controller (controllers.js)
+  The FriendsCtrl pulls data from the Friends service (service.js)
+  The Friends service returns an array of friend data
+-->
+<ion-view view-title="{{event.title}}">
+  <ion-content class="padding">
+	<div class="list card">
+		<div class="item item-divider">
+			When
+		</div>
+		<div class="item item-text-wrap">{{event.performance * 1000 | date:'EEEE MMMM d, y'}}</div>
+		<div class="item item-text-wrap">Call: {{event.call * 1000 | date:'h:m a'}}</div>
+		<div class="item item-text-wrap">Performance: {{event.performance * 1000 | date:'h:m a'}}</div>
+		<div class="item item-text-wrap">Release: {{event.release * 1000 | date:'h:m a'}}</div>
+	</div>
+	<div class="card">
+		<div class="item item-text-wrap">
+			<p>{{event.desc}}</p>
+			<p>{{event.points}} points</p>
+		</div>
+	</div>
+	<div class="list card">
+		<div class="item item-divider">
+			Uniform
+		</div>
+		<div class="item item-text-wrap">{{event.uniform}}</div>
+	</div>
+	<div class="list card">
+		<div class="item item-divider">
+			Location
+		</div>
+		<div class="item item-text-wrap">{{event.location}}</div>
+		<div class="item item-text-wrap">{{event.address}}</div>
+	</div>
+  </ion-content>
+</ion-view>
