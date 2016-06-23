@@ -1,0 +1,15 @@
+<ion-view view-title="Announcements">
+	<ion-content>
+		<ion-list>
+			<div class="list card" ng-repeat="announcement in announcements">
+				<div class="item item-divider">
+					{{announcement.subject}}
+				</div>
+				<a href="#/tab/announcements/{{announcement.id}}" class="item item-icon-right">
+					{{announcement.text | limitTo:140}}{{announcement.text.length > 140 ? '...' : ''}}
+					<i class="icon ion-ios-arrow-right"></i>
+				</a>
+			</div>
+		</ion-list>
+	</ion-content>
+</ion-view>

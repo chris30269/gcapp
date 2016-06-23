@@ -13,8 +13,9 @@
 		<div class="item item-divider">
 		    Announcements
 		</div>
-		<a href="#" class="item" ng-repeat="announcement in announcements">
+		<a href="#/tab/announcements/{{announcement.id}}" class="item item-icon-right" ng-repeat="announcement in announcements">
 			{{announcement.text | limitTo:140}}{{announcement.text.length > 140 ? '...' : ''}}
+			<i class="icon ion-ios-arrow-right"></i>
 		</a>
 	</div>
 	<div class="list card">

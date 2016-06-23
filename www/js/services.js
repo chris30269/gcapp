@@ -121,12 +121,14 @@ myApp.factory("Home", function(){
       {
         id: 0,
         from: "VP",
-        text: "Y'all are losers for not signing up for the hospital gig. It was supposed to be the first time we sang All You Need Is Love. And now I'm sad and the only way to console me is to come to the ig tomorrow and give me a cookie."
+        text: "Y'all are losers for not signing up for the hospital gig. It was supposed to be the first time we sang All You Need Is Love. And now I'm sad and the only way to console me is to come to the gig tomorrow and give me a cookie.",
+        subject: "On Being a Bitch"
       },
       {
         id: 1,
         from: "T",
-        text: "DUUUUUESSSSSS!!!! Pay them. Kthxbai."
+        text: "DUUUUUESSSSSS!!!! Pay them. Kthxbai.",
+        subject: "Dues"
       }
     ];
   return {
@@ -135,6 +137,14 @@ myApp.factory("Home", function(){
     },
     allAnnouncements: function(){
       return announcements;
+    },
+    getAnnouncement: function(announcementId){
+      for (var i = 0; i < announcements.length; i++) {
+          if (announcements[i].id === parseInt(announcementId)) {
+            return announcements[i];
+          }
+        }
+        return null;
     }
   };
 });

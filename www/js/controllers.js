@@ -23,6 +23,13 @@ angular.module('starter.controllers', [])
   $scope.event = Events.get($stateParams.eventId);
 })
 
+.controller('AnnouncementsCtrl', function($scope, Home) {
+  $scope.announcements = Home.allAnnouncements();
+})
+.controller('AnnouncementDetailCtrl', function($scope, $stateParams, Home) {
+  $scope.announcement = Home.getAnnouncement($stateParams.announcementId);
+})
+
 .controller('MusicCtrl', function($scope) {})
 
 .controller('AccountCtrl', function($scope) {
